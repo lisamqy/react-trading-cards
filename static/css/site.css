@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+div.card {
+  border-radius: 3px;
+  border: 3px solid black;
+  width: 11em;
+  height: 25em;
+  /* margin: 2em; */
+  padding: 1em;
+  display: inline-block;
+}
+
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background-color: rgb(132, 168, 163);
+  margin: auto;
+  width: 50%;
+  padding: 5%;
+  
+}
+img {
+  height: 7em;
+  border-radius: 30%;
+}
+
+img.homeballoonicorn {
+  width: 30%;
+  height: 30%
+}
+
+div.homepage {
+  text-align: center;
+}
+
+h1.homepageH1 {
+  text-align: center;
+}
