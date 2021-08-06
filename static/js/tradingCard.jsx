@@ -3,9 +3,41 @@ const tradingCardData = [
   {
     name: 'Balloonicorn',
     skill: 'video games',
-    imgUrl: '/static/img/balloonicorn.jpg'
-  }
-]
+    imgUrl: '/static/img/balloonicorn.jpg',
+    cardId: 1,
+  },
+  { 
+    name: "Float",
+    skill: "baking pretzels",
+    imgUrl: "/static/img/float.jpg",
+    cardId: 2,
+
+  },
+  {
+    name:"Llambda",
+    skill:"knitting scarves",
+    imgUrl:"/static/img/llambda.jpg",
+    cardId: 3,
+  },
+  {
+    name:"Catmaid",
+    skill:"swimming with sharks",
+    imgUrl:"/static/img/merge.png",
+    cardId: 4,
+  },
+  {
+    name:"Seedpy",
+    skill:"spitting watermelon seeds at people",
+    imgUrl:"/static/img/seedpy.jpeg",
+    cardId: 5,
+  },
+];
+
+console.log(tradingCardData);
+
+
+  
+
 
 function TradingCard(props) {
   return (
@@ -17,57 +49,43 @@ function TradingCard(props) {
   );
 }
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Balloonicorn"
-      skill="video games"
-      imgUrl="/static/img/balloonicorn.jpg"
-    />
-  ),
-  document.querySelector('#balloonicorn')
-);
+function TradingCardContainer() {
+  const tradingCards = [];
+
+  for (const currentCard of tradingCardData) {
+    tradingCards.push(
+      <TradingCard
+      name={currentCard.name}
+      skill={currentCard.skill}
+      imgUrl={currentCard.imgUrl}
+      />    
+    );
+  }
+
+  return (
+    <React.Fragment>
+      {tradingCards}
+    </React.Fragment>
+  ); 
+}
 
 ReactDOM.render(
-  (
-    <TradingCard
-      name="Float"
-      skill="baking pretzels"
-      imgUrl="/static/img/float.jpg"
-    />
-  ),
-  document.querySelector('#float')
+  <TradingCardContainer/>,
+  document.querySelector('#container')
 );
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Llambda"
-      skill="knitting scarves"
-      imgUrl="/static/img/llambda.jpg"
-    />
-  ),
-  document.querySelector('#llambda')
-);
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Catmaid"
-      skill="swimming with sharks"
-      imgUrl="/static/img/merge.png"
-    />
-  ),
-  document.querySelector('#merge')
-);
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Seedpy"
-      skill="spitting watermelon seeds at people"
-      imgUrl="/static/img/seedpy.jpeg"
-    />
-  ),
-  document.querySelector('#seedpy')
-);
+
+// ReactDOM.render(
+//   (
+//     <TradingCard
+//       name="Balloonicorn"
+//       skill="video games"
+//       imgUrl="/static/img/balloonicorn.jpg"
+//     />
+//   ),
+//   document.querySelector('#balloonicorn')
+// );
+
+
